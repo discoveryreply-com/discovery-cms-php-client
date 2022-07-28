@@ -1,4 +1,4 @@
-Simple PHP Client for Discovery CMS.
+# Simple PHP Client for Discovery CMS.
 
 After download, run: `composer install`
 
