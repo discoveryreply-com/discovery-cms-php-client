@@ -1,6 +1,16 @@
 # Simple PHP Client for Discovery CMS.
 
-After download, run: `composer install`
+After download, run: `composer install`.
+
+Edit `public/index.php` to configure your API root and API token:
+
+```
+$discoveryConnector = new DiscoveryConnector([
+    'api_root' => 'https://HOSTNAME',
+    'api_token' => 'YOUR_API_TOKEN',
+    'components_namespace' => 'DiscoveryCms\\PhpClient\\SampleApp\\Components',
+]);
+```
 
 Run a local web server with:
 
