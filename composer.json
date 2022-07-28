@@ -1,0 +1,12 @@
+{
+    "name": "discoveryreply/cms-php-client",
+    "description": "Demo client for Discovery CMS",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "DiscoveryCms\\PhpClient\\": "src/"
+        }
+    },
+    "require": {}
+}
