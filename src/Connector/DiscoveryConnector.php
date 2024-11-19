@@ -23,7 +23,7 @@ class DiscoveryConnector
     }
 
     public function fetchDiscoveryPage(string $slug, array $options = []) {
-        $url = $this->apiRoot .'/api/v1/pages/'. $slug . '?token='. $this->apiToken;
+        $url = rtrim($this->apiRoot, '/') .'/api/v1/pages/'. ltrim($slug, '/') . '?token='. $this->apiToken;
         return json_decode(file_get_contents($url));
     }
 
@@ -37,6 +37,7 @@ class DiscoveryConnector
                 throw new \Exception("Component type {$componentData->_type} does not match property title prefix {$propertyTitleWithSlash}");
             }
 
+            $componentData->_page = $page;  // inject page data into component data
             $type = substr($componentData->_type, $propertyTitleWithSlashLen);
             $callback = $this->componentsNamespace . '\\' . $type . '::render';
             $callback($componentData);
